@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+**/build/
+*.local.properties
+
+# Sensitive — contains the GoRest API token
+gradle.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+
+# Kotlin/Native
+*.klib
+
+# iOS
+iosApp/Pods/
+iosApp/.build/
+iosApp/DerivedData/
+iosApp/*.xcworkspace/xcuserdata/
+iosApp/*.xcodeproj/xcuserdata/
+
+# macOS
+.DS_Store
+
+# iOS token config — never commit GoRest token
+*.xcconfig
+iosApp/iosApp.xcworkspace/xcuserdata/

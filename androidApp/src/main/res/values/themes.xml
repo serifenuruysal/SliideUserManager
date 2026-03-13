@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Pure Compose app — the XML theme is only a host window.
+        Theme.Material.Light.NoActionBar is a valid framework style (API 21+),
+        matches our minSdk 26, and avoids the AppCompat dependency.
+        enableEdgeToEdge() in MainActivity sets the window decorations programmatically.
+    -->
+    <style name="Theme.SliideUserManager" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

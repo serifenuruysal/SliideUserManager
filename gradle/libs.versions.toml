@@ -1,0 +1,52 @@
+[versions]
+kotlin           = "2.1.0"
+agp              = "8.13.2"
+compose-plugin   = "1.7.3"
+ktor             = "3.0.3"
+sqldelight       = "2.0.2"
+koin             = "4.0.0"
+coroutines       = "1.10.1"
+serialization    = "1.8.0"
+datetime         = "0.6.2"
+lifecycle        = "2.8.4"
+immutable        = "0.3.8"
+activity-compose = "1.9.3"
+turbine          = "1.2.0"
+
+[libraries]
+ktor-client-core                = { module = "io.ktor:ktor-client-core",                   version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation",    version.ref = "ktor" }
+ktor-client-serialization       = { module = "io.ktor:ktor-serialization-kotlinx-json",    version.ref = "ktor" }
+ktor-client-android             = { module = "io.ktor:ktor-client-okhttp",                 version.ref = "ktor" }
+ktor-client-ios                 = { module = "io.ktor:ktor-client-darwin",                 version.ref = "ktor" }
+ktor-client-logging             = { module = "io.ktor:ktor-client-logging",                version.ref = "ktor" }
+ktor-client-mock                = { module = "io.ktor:ktor-client-mock",                   version.ref = "ktor" }
+sqldelight-runtime        = { module = "app.cash.sqldelight:runtime",               version.ref = "sqldelight" }
+sqldelight-coroutines     = { module = "app.cash.sqldelight:coroutines-extensions",  version.ref = "sqldelight" }
+sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver",        version.ref = "sqldelight" }
+sqldelight-native-driver  = { module = "app.cash.sqldelight:native-driver",         version.ref = "sqldelight" }
+sqldelight-sqlite-driver  = { module = "app.cash.sqldelight:sqlite-driver",         version.ref = "sqldelight" }
+koin-core              = { module = "io.insert-koin:koin-core",              version.ref = "koin" }
+koin-compose           = { module = "io.insert-koin:koin-compose",           version.ref = "koin" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+koin-android           = { module = "io.insert-koin:koin-android",           version.ref = "koin" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test",  version.ref = "coroutines" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+lifecycle-viewmodel         = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel",         version.ref = "lifecycle" }
+lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+kotlinx-datetime            = { module = "org.jetbrains.kotlinx:kotlinx-datetime",                      version.ref = "datetime" }
+# Fix #17 — stable ImmutableList so Compose skips recomposition on unchanged state
+immutable-collections       = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable",         version.ref = "immutable" }
+turbine                     = { module = "app.cash.turbine:turbine",                                     version.ref = "turbine" }
+androidx-activity-compose   = { module = "androidx.activity:activity-compose",                          version.ref = "activity-compose" }
+
+[plugins]
+android-application   = { id = "com.android.application",                   version.ref = "agp" }
+android-library       = { id = "com.android.library",                       version.ref = "agp" }
+kotlin-multiplatform  = { id = "org.jetbrains.kotlin.multiplatform",        version.ref = "kotlin" }
+kotlin-android        = { id = "org.jetbrains.kotlin.android",              version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose",                     version.ref = "compose-plugin" }
+compose-compiler      = { id = "org.jetbrains.kotlin.plugin.compose",       version.ref = "kotlin" }
+kotlin-serialization  = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+sqldelight            = { id = "app.cash.sqldelight",                       version.ref = "sqldelight" }

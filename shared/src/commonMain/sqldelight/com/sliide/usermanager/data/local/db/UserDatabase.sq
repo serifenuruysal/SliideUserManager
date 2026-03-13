@@ -1,0 +1,34 @@
+CREATE TABLE UserEntity (
+    id              INTEGER NOT NULL PRIMARY KEY,
+    name            TEXT    NOT NULL,
+    email           TEXT    NOT NULL,
+    gender          TEXT    NOT NULL,
+    status          TEXT    NOT NULL,
+    createdAtEpochMs INTEGER NOT NULL
+);
+
+-- Track IDs that have been "deleted" locally so they don't reappear after a sync.
+CREATE TABLE DeletedUserId (
+    id INTEGER NOT NULL PRIMARY KEY
+);
+
+selectAll:
+SELECT * FROM UserEntity
+WHERE id NOT IN (SELECT id FROM DeletedUserId)
+ORDER BY createdAtEpochMs DESC;
+
+insert:
+INSERT OR REPLACE INTO UserEntity(id, name, email, gender, status, createdAtEpochMs)
+VALUES (?, ?, ?, ?, ?, ?);
+
+deleteById:
+DELETE FROM UserEntity WHERE id = ?;
+
+deleteAll:
+DELETE FROM UserEntity;
+
+insertDeletedId:
+INSERT OR IGNORE INTO DeletedUserId(id) VALUES (?);
+
+isDeleted:
+SELECT EXISTS(SELECT 1 FROM DeletedUserId WHERE id = ?);
