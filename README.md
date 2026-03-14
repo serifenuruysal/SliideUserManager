@@ -1,4 +1,4 @@
-# Sliide User Manager KMP 
+#  User Manager KMP 
 
 A production-grade **Kotlin Multiplatform** User Management System targeting Android & iOS, built with 100% shared Compose Multiplatform UI.
 
